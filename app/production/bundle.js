@@ -25,16 +25,19 @@ var AppView = React.createClass({displayName: "AppView",
         }        
     },
     getName: function(){
-
-        if (this.state.name != '') {
-            this.setState({
-                name: ''
-            });
-        } else {
-            this.setState({
-                name: 'Леха'
-            });
-        }
+        $.ajax({
+            url: '/api/v1/employees',
+            dataType: 'json',
+        })
+        .done(function() {
+            console.log("success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
         
     },
     clearState: function  () {
