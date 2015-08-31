@@ -18,16 +18,24 @@ var React = require('react');
 var $ = require('jquery');
 
 
-var App = React.createClass({displayName: "App",
+var AppView = React.createClass({displayName: "AppView",
     getInitialState: function(){
         return {
             name: ''
         }        
     },
     getName: function(){
-        this.setState({
-            name: 'Леха'
-        });
+
+        if (this.state.name != '') {
+            this.setState({
+                name: ''
+            });
+        } else {
+            this.setState({
+                name: 'Леха'
+            });
+        }
+        
     },
     clearState: function  () {
         this.setState({
@@ -44,7 +52,7 @@ var App = React.createClass({displayName: "App",
 	}
 });
 
-module.exports = App;
+module.exports = AppView;
 
 },{"jquery":4,"react":163}],3:[function(require,module,exports){
 // shim for using process in browser

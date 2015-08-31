@@ -2,16 +2,24 @@ var React = require('react');
 var $ = require('jquery');
 
 
-var App = React.createClass({
+var AppView = React.createClass({
     getInitialState: function(){
         return {
             name: ''
         }        
     },
     getName: function(){
-        this.setState({
-            name: 'Леха'
-        });
+
+        if (this.state.name != '') {
+            this.setState({
+                name: ''
+            });
+        } else {
+            this.setState({
+                name: 'Леха'
+            });
+        }
+        
     },
     clearState: function  () {
         this.setState({
@@ -28,4 +36,4 @@ var App = React.createClass({
 	}
 });
 
-module.exports = App;
+module.exports = AppView;
