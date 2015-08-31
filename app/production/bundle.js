@@ -19,11 +19,20 @@ var $ = require('jquery');
 
 
 var App = React.createClass({displayName: "App",
+    getInitialState: function(){
+        return {
+            name: ''
+        }        
+    },
+    getName: function(){
+        this.setState({
+            name: 'Леха'
+        });
+    },
 	render: function () {
-        var name = 'Леха'
 		return (
             React.createElement("div", null, 
-		         React.createElement("h2", null, "Hello, ", name)
+		         React.createElement("h2", {onClick: this.getName}, "Hello, ", this.state.name)
             )
 		)
 	}
