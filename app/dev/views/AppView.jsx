@@ -14,10 +14,7 @@ var AppView = React.createClass({
             dataType: 'json',
         })
         .done(function(data) {
-            console.log(data); 
-            this.setState({
-                emploees: data
-            }).bind(this); 
+            console.log(data);             
         })
         .fail(function() {
             console.log("error");
