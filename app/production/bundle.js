@@ -29,10 +29,16 @@ var App = React.createClass({displayName: "App",
             name: 'Леха'
         });
     },
+    clearState: function  () {
+        this.setState({
+            name: ''
+        });  
+    },
 	render: function () {
 		return (
             React.createElement("div", null, 
-		         React.createElement("h2", {onClick: this.getName}, "Hello, ", this.state.name)
+		         React.createElement("h2", {onClick: this.getName}, "Hello, ", this.state.name), 
+                 React.createElement("button", {type: "button", onClick: this.clearState}, "обнулить")
             )
 		)
 	}
