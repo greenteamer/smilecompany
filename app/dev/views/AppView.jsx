@@ -5,7 +5,7 @@ var $ = require('jquery');
 var AppView = React.createClass({
     getInitialState: function(){
         return {
-            name: ''
+            emploees: []
         }        
     },
     getName: function(){
@@ -15,6 +15,9 @@ var AppView = React.createClass({
         })
         .done(function(data) {
             console.log(data); 
+            this.setState({
+                emploees: data
+            }); 
         })
         .fail(function() {
             console.log("error");
@@ -32,7 +35,7 @@ var AppView = React.createClass({
 	render: function () {
 		return (
             <div>
-		         <h2 onClick={this.getName}>Hello, {this.state.name}</h2>
+		         <h2 onClick={this.getName}>Hello, {this.state.emploees[0].title[0].value}</h2>
                  <button type="button" onClick={this.clearState}>обнулить</button>
             </div>
 		)
