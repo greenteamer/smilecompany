@@ -13,8 +13,8 @@ var AppView = React.createClass({
             url: '/api/v1/employees',
             dataType: 'json',
         })
-        .done(function() {
-            console.log("success"); 
+        .done(function(data) {
+            console.log(data); 
         })
         .fail(function() {
             console.log("error");
