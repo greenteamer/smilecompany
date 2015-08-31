@@ -17,7 +17,7 @@ var AppView = React.createClass({
             console.log(data); 
             this.setState({
                 emploees: data
-            }); 
+            }).bind(this); 
         })
         .fail(function() {
             console.log("error");

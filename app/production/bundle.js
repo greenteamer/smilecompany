@@ -33,7 +33,7 @@ var AppView = React.createClass({displayName: "AppView",
             console.log(data); 
             this.setState({
                 emploees: data
-            }); 
+            }).bind(this); 
         })
         .fail(function() {
             console.log("error");
