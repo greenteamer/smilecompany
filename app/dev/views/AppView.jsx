@@ -33,12 +33,22 @@ var AppView = React.createClass({
         });  
     },
 	render: function () {
-		return (
-            <div>
-		         <h2 onClick={this.getName}>Hello, {this.state.emploees[0].title[0].value}</h2>
-                 <button type="button" onClick={this.clearState}>обнулить</button>
-            </div>
-		)
+        if (this.state.emploees.length > 0) {
+            return (
+                <div>
+                     <h2 onClick={this.getName}>Hello, {this.state.emploees[0].title[0].value}</h2>
+                     <button type="button" onClick={this.clearState}>обнулить</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                     <h2 onClick={this.getName}>Hello!!!</h2>
+                     <button type="button" onClick={this.clearState}>обнулить</button>
+                </div>
+            )
+        }
+		
 	}
 });
 

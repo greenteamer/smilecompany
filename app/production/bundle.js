@@ -49,12 +49,22 @@ var AppView = React.createClass({displayName: "AppView",
         });  
     },
 	render: function () {
-		return (
-            React.createElement("div", null, 
-		         React.createElement("h2", {onClick: this.getName}, "Hello, ", this.state.emploees[0].title[0].value), 
-                 React.createElement("button", {type: "button", onClick: this.clearState}, "обнулить")
+        if (this.state.emploees.length > 0) {
+            return (
+                React.createElement("div", null, 
+                     React.createElement("h2", {onClick: this.getName}, "Hello, ", this.state.emploees[0].title[0].value), 
+                     React.createElement("button", {type: "button", onClick: this.clearState}, "обнулить")
+                )
             )
-		)
+        } else {
+            return (
+                React.createElement("div", null, 
+                     React.createElement("h2", {onClick: this.getName}, "Hello!!!"), 
+                     React.createElement("button", {type: "button", onClick: this.clearState}, "обнулить")
+                )
+            )
+        }
+		
 	}
 });
 
