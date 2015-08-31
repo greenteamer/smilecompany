@@ -14,7 +14,7 @@ var AppView = React.createClass({
             dataType: 'json',
         })
         .done(function() {
-            console.log("success");
+            console.log("success"); 
         })
         .fail(function() {
             console.log("error");

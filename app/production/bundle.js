@@ -30,7 +30,7 @@ var AppView = React.createClass({displayName: "AppView",
             dataType: 'json',
         })
         .done(function() {
-            console.log("success");
+            console.log("success"); 
         })
         .fail(function() {
             console.log("error");
