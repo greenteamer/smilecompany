@@ -3,22 +3,11 @@ var $ = require('jquery');
 
 
 var App = React.createClass({
-	getInitialState: function () {
-        return {
-            collection: [],
-          	user: {}
-        }
-    },
-    componentDidMount: function () {
-        console.log('component did mount');
-    },
-    componentWillUnmount: function () {
-        console.log('component will unmount');        
-    },    
 	render: function () {
+        var name = 'Леха'
 		return (
             <div>
-		         <h2>Hello</h2>
+		         <h2>Hello, {name}</h2>
             </div>
 		)
 	}
