@@ -2,19 +2,24 @@ var Dispatcher = require('../dispatcher/Dispatcher.js');
 
 
 var Actions = {
-	getEmployees: function  () {
-		console.log('Actions getEmployees');		
-		Dispatcher.dispatch({
-            actionType: 'get-emploees'
+    getEmployees: function() {    	
+        Dispatcher.dispatch({
+            actionType: "get-emploees"
         });
-        console.log('Actions getEmployees2');
-	},
-	getPages: function  () {
-		Dispatcher.dispatch({
-			actionType: 'get-pages'		
-		});		
-	}
-}
+    },
+    getPages: function() {
+    	console.log('action start 2');
+        Dispatcher.dispatch({
+            actionType: "get-pages"
+        });
+    },
+    getArticles: function() {
+    	console.log('action start 2');
+        Dispatcher.dispatch({
+            actionType: "get-articles"
+        });
+    }
+};
 
 
 module.exports = Actions;
