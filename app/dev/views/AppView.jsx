@@ -42,7 +42,7 @@ var AppView = React.createClass({
         if (this.state.employees.length > 0) {
             return (
                 <div>
-                     <h2>Hello, {this.props.emploees[0].title[0].value}</h2>
+                     <h2>Hello, {this.props.employees[0].title[0].value}</h2>
                      <button type="button" onClick={this.getName}>получить данные</button>
                 </div>
             )

@@ -157,7 +157,7 @@ var AppView = React.createClass({displayName: "AppView",
         if (this.state.employees.length > 0) {
             return (
                 React.createElement("div", null, 
-                     React.createElement("h2", null, "Hello, ", this.props.emploees[0].title[0].value), 
+                     React.createElement("h2", null, "Hello, ", this.props.employees[0].title[0].value), 
                      React.createElement("button", {type: "button", onClick: this.getName}, "получить данные")
                 )
             )
