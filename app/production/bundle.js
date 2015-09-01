@@ -155,11 +155,13 @@ var AppView = React.createClass({displayName: "AppView",
 	render: function () {
         console.log(this.state.employees);
         if (this.state.employees.length > 0) {
+            var description = this.state.employees[0].body[0].value;
+            description = description.replace(/(<([^>]+)>)/ig,"");
             return (
                 React.createElement("div", null, 
                     React.createElement("h2", null, "Hello, ", this.state.employees[0].title[0].value), 
                     React.createElement("button", {type: "button", onClick: this.getName}, "получить данные"), 
-                    React.createElement("p", null, this.state.employees[0].body[0].value)
+                    React.createElement("p", null, description)
                 )
             )
         } else {

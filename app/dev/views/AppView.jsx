@@ -40,11 +40,13 @@ var AppView = React.createClass({
 	render: function () {
         console.log(this.state.employees);
         if (this.state.employees.length > 0) {
+            var description = this.state.employees[0].body[0].value;
+            description = description.replace(/(<([^>]+)>)/ig,"");
             return (
                 <div>
                     <h2>Hello, {this.state.employees[0].title[0].value}</h2>
                     <button type="button" onClick={this.getName}>получить данные</button>
-                    <p>{this.state.employees[0].body[0].value}</p>     
+                    <p>{description}</p>     
                 </div>
             )
         } else {
