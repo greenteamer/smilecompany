@@ -153,6 +153,7 @@ var AppView = React.createClass({displayName: "AppView",
         });  
     },
 	render: function () {
+        console.log(this.state.employees);
         if (this.state.employees.length > 0) {
             return (
                 React.createElement("div", null, 
