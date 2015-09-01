@@ -1,6 +1,8 @@
 var React = require('react');
 var $ = require('jquery');
 
+var Actions = require('../actions/Actions.js');
+
 
 var AppView = React.createClass({
     getInitialState: function(){
@@ -9,6 +11,10 @@ var AppView = React.createClass({
         }        
     },
     getName: function(){
+
+        Actions.getEmployees();
+        // Actions.getPages();    
+
         $.ajax({
             url: '/api/v1/employees',
             dataType: 'json',
