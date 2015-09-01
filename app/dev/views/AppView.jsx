@@ -43,7 +43,7 @@ var AppView = React.createClass({
 
             var items = this.state.employees.map(function  (item) {
                 //тело функции
-                var description = this.state.employees[0].body[0].value;
+                var description = item.body[0].value;
                 description = description.replace(/(<([^>]+)>)/ig,"");
                 return (
                     <div>
