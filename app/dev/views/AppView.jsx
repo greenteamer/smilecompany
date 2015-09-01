@@ -1,7 +1,13 @@
 var React = require('react');
 var $ = require('jquery');
+var Settings = require('../Settings.js');
+
+
 
 var Actions = require('../actions/Actions.js');
+
+
+var site_url = Settings.url;
 
 
 var AppView = React.createClass({
@@ -11,23 +17,23 @@ var AppView = React.createClass({
         }        
     },
     getName: function(){
-
+        console.log('AppView getName');
         Actions.getEmployees();
         // Actions.getPages();    
 
-        $.ajax({
-            url: '/api/v1/employees',
-            dataType: 'json',
-        })
-        .done(function(data) {
-            console.log(data);             
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
+        // $.ajax({
+        //     url: 'http://co45324.tmweb.ru/api/v1/employees',
+        //     dataType: 'json',
+        // })
+        // .done(function(data) {
+        //     console.log(data);             
+        // })
+        // .fail(function() {
+        //     console.log("error");
+        // })
+        // .always(function() {
+        //     console.log("complete");
+        // });
         
     },
     clearState: function  () {

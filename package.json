@@ -33,6 +33,7 @@
   "scripts": {
     "prod": "jsx -x jsx ./client/dev ./client/dist",
     "build-js": "browserify ./client/main.js > ./client/bundle.js",
-    "index-watch": "watchify ./app/dev/main.js -o ./app/production/bundle.js -v"
+    "index-watch": "watchify ./app/dev/main.js -o ./app/production/bundle.js -v",
+    "drupal8-watch": "watchify ./app/dev/main.js -o ../drupal8/bundle.js -v"
   }
 }

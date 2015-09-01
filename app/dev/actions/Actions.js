@@ -3,9 +3,11 @@ var Dispatcher = require('../dispatcher/Dispatcher.js');
 
 var Actions = {
 	getEmployees: function  () {
+		console.log('Actions getEmployees');		
 		Dispatcher.dispatch({
-			actionType: 'get-emploees'		
-		});		
+            actionType: 'get-emploees'
+        });
+        console.log('Actions getEmployees2');
 	},
 	getPages: function  () {
 		Dispatcher.dispatch({
