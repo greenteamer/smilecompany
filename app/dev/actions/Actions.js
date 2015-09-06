@@ -18,6 +18,27 @@ var Actions = {
         Dispatcher.dispatch({
             actionType: "get-articles"
         });
+    },
+    getSlides: function () {
+        console.log('action get slides');
+        Dispatcher.dispatch({
+            actionType: "get-slides"
+        });
+    },
+    getDirections: function () {
+        Dispatcher.dispatch({
+            actionType: "get-directions"
+        });  
+    },
+    getAdvantages: function () {
+        Dispatcher.dispatch({
+            actionType: "get-advantages"
+        });  
+    },
+    getPortfolio: function () {
+        Dispatcher.dispatch({
+            actionType: "get-portfolio"
+        });    
     }
 };
 

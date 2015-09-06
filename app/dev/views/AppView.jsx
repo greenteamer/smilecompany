@@ -27,11 +27,12 @@ var AppView = React.createClass({
         }        
     },
     componentWillMount: function () {
+        Actions.getEmployees();  
         Store.bind('changeEmployees', this.changeEmployees);
     },
-    getName: function(){
-        Actions.getEmployees();                        
-    },
+    componentWillUnount: function () {
+        Store.unbind('changeEmployees', this.changeEmployees);
+    },    
     changeEmployees: function  () {
         this.setState({
             employees: Store.employees
@@ -39,10 +40,12 @@ var AppView = React.createClass({
     },
 	render: function () {
         console.log(this.state.employees);
+        console.log(this.state.employees.length, 'эллементов в массиве');
         if (this.state.employees.length > 0) {            
 
-            var items = this.state.employees.map(function  (item) {
+            var items = this.state.employees.map(function  (item, index) {
                 //тело функции
+                console.log(index, 'итерация');
                 var description = item.body[0].value;
                 description = description.replace(/(<([^>]+)>)/ig,"");
                 return (
@@ -51,20 +54,18 @@ var AppView = React.createClass({
                         <p>{description}</p>  
                     </div>
                 )
-
             });
-
+            console.log(items);            
             return (
-                <div>
-                    <button type="button" onClick={this.getName}>получить данные</button>
+                <div>   
+                    <h2>Наши специалисты</h2>                 
                     {items} 
                 </div>
             )
         } else {
             return (
                 <div>
-                     <h2>Hello!!!</h2>
-                     <button type="button" onClick={this.getName}>получить данные</button>
+                     <h2>Наши специалисты</h2>                     
                 </div>
             )
         }

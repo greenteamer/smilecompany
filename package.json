@@ -1,9 +1,9 @@
 {
-  "name": "Proslavlenie-tomsk-project",
+  "name": "Smile-company-project",
   "version": "1.0.0",
-  "description": "Church of prise in Tomsk",
+  "description": "Make your chiled happy",
   "author": "Aleksandr Korovkin",
-  "homepage": "http://proslavlenie.ru",
+  "homepage": "",
   "browserify": {
     "transform": [
       [
@@ -15,15 +15,20 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^3.3.5",
+    "bootstrap-material": "^0.1.5",
     "fancybox": "^3.0.0",
     "flux": "^2.0.3",
+    "font-awesome": "^4.4.0",
     "jquery": "^2.1.4",
     "js-cookie": "^1.5.1",
     "material-ui": "^0.8.0",
     "merge": "^1.2.0",
     "microevent": "^1.0.0",
     "react": "latest",
-    "react-select": "^0.6.2"
+    "react-parallax": "^0.1.1",
+    "react-select": "^0.6.2",
+    "react-slick": "^0.7.0"
   },
   "devDependencies": {
     "browserify": "latest",
@@ -33,7 +38,7 @@
   "scripts": {
     "prod": "jsx -x jsx ./client/dev ./client/dist",
     "build-js": "browserify ./client/main.js > ./client/bundle.js",
-    "index-watch": "watchify ./app/dev/main.js -o ./app/production/bundle.js -v",
+    "index-watch": "watchify ./app/dev/main.jsx -o ./app/production/bundle.js -v",
     "drupal8-watch": "watchify ./app/dev/main.js -o ../drupal8/bundle.js -v"
   }
 }
